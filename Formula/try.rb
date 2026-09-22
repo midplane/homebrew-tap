@@ -1,4 +1,4 @@
-class SimpleTry < Formula
+class Try < Formula
   desc "Fuzzy-find an experiment directory, or create a dated one"
   homepage "https://github.com/midplane/simple-try"
   url "https://github.com/midplane/simple-try/archive/refs/tags/v0.1.0.tar.gz"
