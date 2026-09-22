@@ -11,6 +11,19 @@ class Try < Formula
     bin.install "try.sh" => "try"
   end
 
+  def caveats
+    <<~EOS
+      `try` only prints a path — it can't `cd` your shell for you. Add the
+      integration to your shell's rc file so `try` changes directory:
+
+        # bash / zsh
+        eval "$(#{bin}/try init)"
+
+        # fish
+        #{bin}/try init --fish | source
+    EOS
+  end
+
   test do
     assert_match "usage", shell_output("#{bin}/try new 2>&1", 1)
   end
